@@ -1,29 +1,100 @@
+@import url('https://fonts.google.com/specimen/Roboto');
 
-.timer {
-font-family: sans-serif;
-padding: 24px 32px;
-border-radius: 30px;
-position: c;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
 }
 
-.counter {
-font-size: 36px;
-font-weight: bold;
+p {
+    background-color: #fff;
+    display: inline-flex;
+    align-items: center;
+    font-size: 50px;
+    margin: 0;
+    height: 70px;
+    width: 200px;
 }
 
-.timer__btn {
-width: 50px;
-height: 50px;
-margin-left: 16px;
-border-radius: 50%;
-border: none;
-color: black;
-background: #fff;
-cursor: pointer;
+button#btn{
+    height: 70px;
+    width: 50px;
 }
 
-footer{
-    background-color: rgb(166, 175, 179);
+button.timer{
+    height: 30px;
+    width: 100px;
 }
+
+
+p.timertext{
+    height: 70px;
+    width: 500px;
+}
+
+.formBox{
+    width: 100%;
+    height: 10vh;
+    padding: 0 8%;
+}
+
+.formBox label{
+    text-align: center;
+    padding-top: 10%;
+    margin-bottom: 60px;
+    font-weight: 600;
+    position: relative;
+}
+
+.formBox label::after{
+    content: '';
+    background: #303ef7;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+
+.formBox{
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s;
+}
+/*
+.formBox i{
+    font-size: 1000px;
+    margin-bottom: 10px;
+    color: #303ef7;
+}
+*/
+.formBox h2{
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.formBox:hover{
+    background: #303ef7;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.formBox:hover i{
+    color: #fff;
+}
+
+
 
   
