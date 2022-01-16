@@ -1,22 +1,89 @@
-<!-- ***** index.html ***** -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    //enter the task name
-    <label>Enter the task:</label><br>
-    <input type="text" id="myText"><br>
-    <button type="button" id="myButton">submit</button>
-    <script src="index.js"></script>
-    
-    
-    
+<html>
+<title>try</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="style1.css">
+<body class="w3-content" style="max-width:1300px">
+
+<!-- First Grid: Logo & About -->
+<div class="w3-row">
+  <div class="w3-half w3-black w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1>Add Task</h1>
+    </div>
+    <img src="https://www.pngkit.com/png/detail/68-680438_wait-for-to-do-list-action-icon-white.png" class="w3-margin" alt="Person" style="width: 20%">  
+    <div class="w3-padding-50">
+      
+        <div style="color: beige;">
+            <form>
+              <label for="fname" >Task:</label><br>
+              <input type="text" id="task" name="fname"><br>
+              <label for="lname" >Time:</label><br>
+              <input type="text" id="time" name="lname"><br>
+              <button type="button" id="myBotton" style="background-color: rgb(112, 109, 109); color: #fff">submit</button>
+            </form> 
+            
+          </div>
+      <a href="index.html" class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Home</a>
+      <a href="#contact" class="w3-button w3-black w3-block w3-hover- w3-padding-16">Contact</a>
+    </div>
+  </div>
+  <div class="w3-half w3-blue-grey w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-center">
+      <h1>Clock</h1>
+      <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX41611905.jpg" class="w3-margin w3-circle" alt="Person" style="width:50%">
+      <div class="timer">
+        <span class="counter">00:00:00</span>
+       
+
+        <button type="button" class="timer__btn timer__btn--control timer__btn--start">
+          <span class="material-icons">play_arrow</span>
+        </button>
+
+        <button type="button" class="timer__btn  timer__btn--reset" id="reset">
+          <span class="material-icons">timer</span>
+        </button>
+        <script src="sub.js"> </script>
+
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+ <!-- Footer -->
+ <footer class="w3-row-padding w3-padding-32">
+    <hr id="contact">
+    <div class="w3-show-inline-block">
+      <h3>Contact</h3>
+  
+      <ul>
+        <h5> Code War</h5>  
+        <li>Celine</li>
+        <li>Cindy</li> 
+        <li>Lara</li>
+        <li>Piper</li>
+    </ul>
+    </div>
+
+    <div class="w3-third w3-serif">
+      <img src="http://static1.squarespace.com/static/50bef098e4b0e692146cbfc7/t/5eda09f22aa0073ce95efa31/1591347702769/?format=1500w" class="w3-margin w3-circle" style="width:80%"> 
+    </div> 
+
+    <div class="w3-third w3-serif">
+      <h3>BRAINSTORM IDEAS</h3>
+      <p>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Instant Noodle Timer</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Herstory</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Music Visualizer</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Music Mash-upper</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Pop-out Notification</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Calendar</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">QR Code Generator</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Radom Answer Generator</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Emergency Locator</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Find Nearest Toilets</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sign Language</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Al-Gore ithm</span>
+      </p>
+    </div>
+
+  </footer>
 
 </body>
 </html>
