@@ -1,55 +1,69 @@
-document.getElementById("reset").onclick = function(){
-var hrsinp = prompt("How long, in hours, do you want to countdown on?", 1);
-var minsinp = prompt("How long, in minutes, do you want to countdown on?", 1);
-var secsinp = prompt("How long, in seconds, do you want to countdown on?", 1);
-var hrs = parseInt(hrsinp);
-var mins = parseInt(minsinp);
-var secs = parseInt(secsinp);
-}
+let events = [];
 
+const addEvent = (ev) => {
+  ev.preventDefault();
+  let event = {
+    task: document.getElementById("task").value,
+    hours: parseInt(document.getElementById("h").value),
+    minutes: parseInt(document.getElementById("min").value),
+    seconds: parseInt(document.getElementById("sec").value),
+  };
+  events.push(event);
+  document.forms[0].reset();
 
-const events = [
-  {
-    name: "comp202 study",
-    timerDuration: 2 * 3600,
-  },
-  { name: "comp250 study", timerDuration: 4 * 3600 },
-];
+  let btn = document.createElement("button");
+  
+  btn.innerHTML = `${event.task} - ${event.hours}:${event.minutes}:${event.seconds}`;
+  btn.setAttribute("class","timer");
+  document.body.appendChild(btn);
 
-if (!localStorage.getItem("events")) {
-  localStorage.setItem("events", JSON.stringify(events));
-  // allow user to create event (oh first time visiting our site)
-} else {
-  localStorage.getItem("events");
-}
+  let timertext = document.createElement("p");
+  timertext.setAttribute("class", "timertext");
+  timertext.setAttribute("id", event.task);
+  document.body.appendChild(timertext);
+  /**
+   *
+   * @param {Number} time user specificed amount of time
+   */
+  function executeCycle(time) {
+    const countdownEl = document.getElementById(event.task);
 
-let time = hrs * 60 * 60 + mins * 60 + secs;
+    function updateCountdown() {
+      let curtime = time;
+      let hrs = parseInt(curtime / (60 * 60));
+      curtime = curtime % 3600;
+      let mins = parseInt(curtime / 60);
+      curtime = curtime % 60;
+      let secs = curtime % 60;
 
-const countdownEl = document.getElementById("countdown");
+      hrs = hrs < 10 ? "0" + hrs : hrs;
+      mins = mins < 10 ? "0" + mins : mins;
+      secs = secs < 10 ? "0" + secs : secs;
 
-setInterval(updateCountdown, 1000);
-
-function updateCountdown() {
-  let curTime = time;
-  const hours = parseInt(curTime / (60 * 60));
-  curTime = curTime % 3600;
-
-  let minutes = parseInt(curTime / 60);
-  curTime = curTime % 60;
-
-  let seconds = curTime % 60;
-  /*
-    if (minutes == 60){
-        minutes = '00';
+      if (time >= 0 ){
+        console.log(time);
+        countdownEl.innerHTML = `${hrs}:${mins}:${secs}`;
+        time--;
+      }
     }
-    if (seconds < 10){
-        seconds = '0' + seconds;
-    }*/
-  //   minutes = minutes == 60 ? "00" : minutes;
-  //   seconds = seconds < 10 ? "0" + seconds : seconds;
 
-  countdownEl.innerHTML = `${hours}:${
-    minutes >= 10 ? `${minutes}` : `0${minutes}`
-  }:${seconds}`;
-  time--;
-}
+    setInterval(updateCountdown, 1000);
+  }
+
+  btn.onclick = function () {
+    executeCycle(event.hours * 3600 + event.minutes * 60 + event.seconds);
+  };
+
+  //for display purposes only
+  console.warn("added", { events });
+  let pre = document.querySelector("#msg pre");
+  pre.textContent = "\n" + JSON.stringify(events, "\t", 2);
+
+  //saving to localStorage
+  localStorage.setItem("MyMovieList", JSON.stringify(events));
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("btn").addEventListener("click", addEvent);
+});
+
