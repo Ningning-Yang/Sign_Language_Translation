@@ -1,0 +1,29 @@
+
+.timer {
+font-family: sans-serif;
+padding: 24px 32px;
+border-radius: 30px;
+position: c;
+}
+
+.counter {
+font-size: 36px;
+font-weight: bold;
+}
+
+.timer__btn {
+width: 50px;
+height: 50px;
+margin-left: 16px;
+border-radius: 50%;
+border: none;
+color: black;
+background: #fff;
+cursor: pointer;
+}
+
+footer{
+    background-color: rgb(166, 175, 179);
+}
+
+  
