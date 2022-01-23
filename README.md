@@ -7,4 +7,5 @@ Perfect for multitaskers!
 - Save time laps for specific events
 - Automatically time for the chosen event by the pre-set time laps
 - Add as many timers as needed
+- Published as a GitHub Site with the link: 
 
